@@ -5,11 +5,13 @@ go 1.19
 require (
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/go-sql-driver/mysql v1.6.0
+	github.com/kelseyhightower/envconfig v1.4.0
+	github.com/nolleh/caption_json_formatter v0.0.0-20220315135329-e0b5bf6eda5a
+	github.com/sirupsen/logrus v1.9.0
 	github.com/spf13/viper v1.14.0
 	go.uber.org/zap v1.21.0
 	gorm.io/driver/mysql v1.4.4
 	gorm.io/gorm v1.24.1
-	moul.io/zapgorm2 v1.1.3
 )
 
 require (
@@ -30,7 +32,7 @@ require (
 	github.com/subosito/gotenv v1.4.1 // indirect
 	go.uber.org/atomic v1.9.0 // indirect
 	go.uber.org/multierr v1.8.0 // indirect
-	golang.org/x/sys v0.0.0-20220908164124-27713097b956 // indirect
+	golang.org/x/sys v0.0.0-20220919091848-fb04ddd9f9c8 // indirect
 	golang.org/x/text v0.4.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect

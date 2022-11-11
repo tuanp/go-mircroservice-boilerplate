@@ -1,7 +1,29 @@
 package service
 
-import "github.com/tuanp/go-gin-boilerplate/pkg/logger"
+import (
+	"github.com/rogpeppe/go-internal/cache"
+	"github.com/tuanp/go-gin-boilerplate/pkg/logger"
+	"github.com/tuanp/go-gin-boilerplate/services/app1/internal/repository"
+)
 
 type Services struct {
-	logger logger.Logger
+}
+
+type Deps struct {
+	Repos       *repository.Repositories
+	Cache       cache.Cache
+	CacheTTL    int64
+	Environment string
+	Domain      string
+	Logger      logger.Logger
+}
+
+func NewServices(deps Deps) *Services {
+	// Services init
+	//schoolsService := NewSchoolsService(deps.Repos.Schools, deps.Cache, deps.CacheTTL)
+
+	return &Services{
+		//Schools:        schoolsService,
+
+	}
 }

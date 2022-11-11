@@ -2,12 +2,14 @@ package config
 
 import (
 	"os"
-	"strconv"
 	"time"
 
 	"github.com/go-sql-driver/mysql"
+	"github.com/kelseyhightower/envconfig"
 	"github.com/spf13/viper"
 )
+
+type LogType int32
 
 const (
 	defaultHTTPPort               = "8000"
@@ -16,6 +18,9 @@ const (
 
 	EnvLocal = "local"
 	Prod     = "prod"
+
+	Zap    LogType = 0
+	Logrus LogType = 1
 )
 
 type (
@@ -75,11 +80,12 @@ type (
 	}
 
 	LoggerConfig struct {
-		Development       bool   `yaml:"development" mapstructure:"development"`
-		DisableCaller     bool   `yaml:"disableCaller" mapstructure:"disableCaller"`
-		DisableStacktrace bool   `yaml:"disableStacktrace" mapstructure:"disableStacktrace"`
-		Encoding          string `yaml:"encoding" mapstructure:"encoding"`
-		Level             string `yaml:"level" mapstructure:"level"`
+		Development       bool    `yaml:"development" mapstructure:"development"`
+		DisableCaller     bool    `yaml:"disableCaller" mapstructure:"disableCaller"`
+		DisableStacktrace bool    `yaml:"disableStacktrace" mapstructure:"disableStacktrace"`
+		Encoding          string  `yaml:"encoding" mapstructure:"encoding"`
+		LogLevel          string  `yaml:"level" mapstructure:"level"`
+		LogType           LogType `yaml:"logType" mapstructure:"logType"`
 	}
 
 	ServerConfig struct {
@@ -131,6 +137,7 @@ func Init(configsDir string) (*Config, error) {
 		return nil, err
 	}
 
+	// Override configuration from environment settings
 	if err := setFromEnv(&cfg); err != nil {
 		return nil, err
 	}
@@ -163,28 +170,18 @@ func unmarshal(cfg *Config) error {
 }
 
 func setFromEnv(cfg *Config) error {
-	// TODO use envconfig https://github.com/kelseyhightower/envconfig
 
-	cfg.Mysql.Address = os.Getenv("MYSQL_ADDRESS")
-	cfg.Mysql.Username = os.Getenv("MYSQL_USER")
-	cfg.Mysql.Password = os.Getenv("MYSQL_PASS")
-	cfg.Mysql.Database = os.Getenv("MYSQL_DATABASE")
-	cfg.Mysql.Protocol = os.Getenv("MYSQL_PROTOCOL")
-
-	cfg.Redis.Addr = os.Getenv("REDIS_ADDRESS")
-	redisDB, err := strconv.Atoi(os.Getenv("REDIS_DATABASE"))
-	if err != nil {
+	if err := envconfig.Process("mysql", &cfg.Mysql); err != nil {
 		return err
 	}
-	cfg.Redis.DB = redisDB
-	cfg.Redis.Password = os.Getenv("REDIS_PASS")
-	redisPoolSize, err1 := strconv.Atoi(os.Getenv("REDIS_POOL_SIZE"))
-	if err1 != nil {
-		return err1
-	}
-	cfg.Redis.PoolSize = redisPoolSize
 
-	cfg.HTTP.Host = os.Getenv("HTTP_HOST")
+	if err := envconfig.Process("redis", &cfg.Redis); err != nil {
+		return err
+	}
+
+	if err := envconfig.Process("http", &cfg.HTTP); err != nil {
+		return err
+	}
 
 	cfg.Environment = os.Getenv("APP_ENV")
 

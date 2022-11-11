@@ -1,14 +1,14 @@
-module github.com/tuanp/go-gin-boilerplate/services/app1
+module github.com/tuanp/go-mircroservice-boilerplate/services/app1
 
 go 1.19
 
 // https://go.dev/doc/tutorial/call-module-code
-replace github.com/tuanp/go-gin-boilerplate => ../../
+replace github.com/tuanp/go-mircroservice-boilerplate => ../../
 
 require (
 	github.com/labstack/echo/v4 v4.9.1
 	github.com/rogpeppe/go-internal v1.6.1
-	github.com/tuanp/go-gin-boilerplate v0.0.0-20221111144353-8ea704acc003
+	github.com/tuanp/go-mircroservice-boilerplate v0.0.0-20221111144353-8ea704acc003
 	gorm.io/gorm v1.24.1
 )
 

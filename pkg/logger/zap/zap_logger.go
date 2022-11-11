@@ -4,9 +4,9 @@ import (
 	"os"
 	"time"
 
-	"github.com/tuanp/go-gin-boilerplate/pkg/config"
-	"github.com/tuanp/go-gin-boilerplate/pkg/constants"
-	"github.com/tuanp/go-gin-boilerplate/pkg/logger"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/config"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/constants"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/logger"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

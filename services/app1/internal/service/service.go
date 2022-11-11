@@ -2,8 +2,8 @@ package service
 
 import (
 	"github.com/rogpeppe/go-internal/cache"
-	"github.com/tuanp/go-gin-boilerplate/pkg/logger"
-	"github.com/tuanp/go-gin-boilerplate/services/app1/internal/repository"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/logger"
+	"github.com/tuanp/go-mircroservice-boilerplate/services/app1/internal/repository"
 )
 
 type Services struct {

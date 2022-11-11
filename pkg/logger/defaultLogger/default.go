@@ -3,10 +3,10 @@ package defaultLogger
 import (
 	"os"
 
-	"github.com/tuanp/go-gin-boilerplate/pkg/config"
-	"github.com/tuanp/go-gin-boilerplate/pkg/logger"
-	"github.com/tuanp/go-gin-boilerplate/pkg/logger/logrous"
-	"github.com/tuanp/go-gin-boilerplate/pkg/logger/zap"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/config"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/logger"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/logger/logrous"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/logger/zap"
 )
 
 var (

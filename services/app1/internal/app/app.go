@@ -10,13 +10,13 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/tuanp/go-gin-boilerplate/pkg/config"
-	"github.com/tuanp/go-gin-boilerplate/pkg/db"
-	"github.com/tuanp/go-gin-boilerplate/pkg/logger/zap"
-	"github.com/tuanp/go-gin-boilerplate/services/app1/internal/handler"
-	"github.com/tuanp/go-gin-boilerplate/services/app1/internal/repository"
-	"github.com/tuanp/go-gin-boilerplate/services/app1/internal/server"
-	"github.com/tuanp/go-gin-boilerplate/services/app1/internal/service"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/config"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/db"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/logger/zap"
+	"github.com/tuanp/go-mircroservice-boilerplate/services/app1/internal/handler"
+	"github.com/tuanp/go-mircroservice-boilerplate/services/app1/internal/repository"
+	"github.com/tuanp/go-mircroservice-boilerplate/services/app1/internal/server"
+	"github.com/tuanp/go-mircroservice-boilerplate/services/app1/internal/service"
 )
 
 // Run initializes whole application.

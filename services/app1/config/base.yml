@@ -14,15 +14,15 @@ server:
   debug: true
 
 mysql:
-  address: 127.0.0.1:6603
-  database: user-center
+  address: 127.0.0.1:3306
+  database: db
   username: root
-  password: olah123
+  password: 123456
   protocol: tcp
   parseTime: true
 
 redis:
-  addr: 127.0.0.1:16379
+  addr: 127.0.0.1:6379
   password:
   db: 0
 

@@ -1,4 +1,4 @@
-module github.com/tuanp/go-gin-boilerplate
+module github.com/tuanp/go-mircroservice-boilerplate
 
 go 1.19
 

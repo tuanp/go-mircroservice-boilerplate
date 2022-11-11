@@ -7,7 +7,7 @@ import (
 	"github.com/go-sql-driver/mysql"
 	"github.com/kelseyhightower/envconfig"
 	"github.com/spf13/viper"
-	"github.com/tuanp/go-gin-boilerplate/pkg/constants"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/constants"
 )
 
 type LogType int32

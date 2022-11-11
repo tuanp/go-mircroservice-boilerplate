@@ -1,7 +1,7 @@
 package logger
 
 import (
-	"github.com/tuanp/go-gin-boilerplate/pkg/config"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/config"
 
 	"time"
 )

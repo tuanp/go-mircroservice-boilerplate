@@ -3,8 +3,8 @@ package db
 import (
 	"time"
 
-	"github.com/tuanp/go-gin-boilerplate/pkg/config"
-	"github.com/tuanp/go-gin-boilerplate/pkg/logger"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/config"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/logger"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

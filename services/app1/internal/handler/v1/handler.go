@@ -2,7 +2,7 @@ package v1
 
 import (
 	"github.com/labstack/echo/v4"
-	"github.com/tuanp/go-gin-boilerplate/services/app1/internal/service"
+	"github.com/tuanp/go-mircroservice-boilerplate/services/app1/internal/service"
 )
 
 type Handler struct {

@@ -4,10 +4,10 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
-	"github.com/tuanp/go-gin-boilerplate/pkg/config"
-	"github.com/tuanp/go-gin-boilerplate/pkg/logger"
-	v1 "github.com/tuanp/go-gin-boilerplate/services/app1/internal/handler/v1"
-	"github.com/tuanp/go-gin-boilerplate/services/app1/internal/service"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/config"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/logger"
+	v1 "github.com/tuanp/go-mircroservice-boilerplate/services/app1/internal/handler/v1"
+	"github.com/tuanp/go-mircroservice-boilerplate/services/app1/internal/service"
 )
 
 type Handler struct {

@@ -2,7 +2,7 @@ package db
 
 import (
 	"github.com/go-redis/redis/v8"
-	"github.com/tuanp/go-gin-boilerplate/pkg/config"
+	"github.com/tuanp/go-mircroservice-boilerplate/pkg/config"
 
 	"log"
 	"time"

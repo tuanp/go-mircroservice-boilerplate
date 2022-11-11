@@ -10,7 +10,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/tuanp/go-gin-boilerplate/config"
+	"github.com/tuanp/go-gin-boilerplate/pkg/config"
 	"github.com/tuanp/go-gin-boilerplate/pkg/db"
 	"github.com/tuanp/go-gin-boilerplate/pkg/logger/zap"
 	"github.com/tuanp/go-gin-boilerplate/services/app1/internal/handler"
@@ -58,7 +58,7 @@ func Run(configPath string) {
 		Repos: repos,
 		//Cache:                  memCache,
 		CacheTTL:    int64(cfg.CacheTTL.Seconds()),
-		Environment: cfg.Environment,
+		Environment: cfg.Server.Mode,
 		Domain:      cfg.HTTP.Host,
 		Logger:      logger,
 	})

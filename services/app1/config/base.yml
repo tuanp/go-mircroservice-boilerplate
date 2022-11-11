@@ -1,5 +1,4 @@
 # common configurations
-environment: local
 http:
   port: 8000
   maxHeaderBytes: 1
@@ -11,7 +10,7 @@ cache:
 
 server:
   appVersion: 1.0.0
-  mode: Development
+  mode: dev
   debug: true
 
 mysql:
@@ -21,6 +20,7 @@ mysql:
   password: olah123
   protocol: tcp
   parseTime: true
+
 redis:
   addr: 127.0.0.1:16379
   password:

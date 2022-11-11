@@ -7,6 +7,5 @@ import (
 const configsDir = "config"
 
 func main() {
-
 	app.Run(configsDir)
 }

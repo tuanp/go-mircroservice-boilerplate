@@ -1,12 +1,13 @@
 package handler
 
 import (
+	"net/http"
+
 	"github.com/labstack/echo/v4"
-	"github.com/tuanp/go-gin-boilerplate/config"
+	"github.com/tuanp/go-gin-boilerplate/pkg/config"
 	"github.com/tuanp/go-gin-boilerplate/pkg/logger"
 	v1 "github.com/tuanp/go-gin-boilerplate/services/app1/internal/handler/v1"
 	"github.com/tuanp/go-gin-boilerplate/services/app1/internal/service"
-	"net/http"
 )
 
 type Handler struct {

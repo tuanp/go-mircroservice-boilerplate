@@ -7,6 +7,7 @@ import (
 	"github.com/go-sql-driver/mysql"
 	"github.com/kelseyhightower/envconfig"
 	"github.com/spf13/viper"
+	"github.com/tuanp/go-gin-boilerplate/pkg/constants"
 )
 
 type LogType int32
@@ -16,22 +17,18 @@ const (
 	defaultHTTPRWTimeout          = 10 * time.Second
 	defaultHTTPMaxHeaderMegabytes = 1
 
-	EnvLocal = "local"
-	Prod     = "prod"
-
 	Zap    LogType = 0
 	Logrus LogType = 1
 )
 
 type (
 	Config struct {
-		Environment string
-		Mysql       MysqlConfig
-		HTTP        HTTPConfig
-		Redis       RedisConfig
-		Logger      LoggerConfig
-		Server      ServerConfig
-		CacheTTL    time.Duration `mapstructure:"ttl"`
+		Mysql    MysqlConfig
+		HTTP     HTTPConfig
+		Redis    RedisConfig
+		Logger   LoggerConfig
+		Server   ServerConfig
+		CacheTTL time.Duration `mapstructure:"ttl"`
 	}
 
 	HTTPConfig struct {
@@ -183,20 +180,18 @@ func setFromEnv(cfg *Config) error {
 		return err
 	}
 
-	cfg.Environment = os.Getenv("APP_ENV")
-
 	return nil
 }
 
 func parseConfigFile(folder, env string) error {
 	viper.AddConfigPath(folder)
-	viper.SetConfigName("main")
+	viper.SetConfigName("base")
 
 	if err := viper.ReadInConfig(); err != nil {
 		return err
 	}
 
-	if env == EnvLocal {
+	if env == constants.EnvDev {
 		return nil
 	}
 

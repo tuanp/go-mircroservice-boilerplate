@@ -6,7 +6,7 @@ import (
 
 	"github.com/nolleh/caption_json_formatter"
 	"github.com/sirupsen/logrus"
-	"github.com/tuanp/go-gin-boilerplate/config"
+	"github.com/tuanp/go-gin-boilerplate/pkg/config"
 	"github.com/tuanp/go-gin-boilerplate/pkg/constants"
 	"github.com/tuanp/go-gin-boilerplate/pkg/logger"
 )
@@ -57,7 +57,7 @@ func (l *logrusLogger) initLogger(cfg *config.ServerConfig) {
 	// Can be any io.Writer, see below for File example
 	logrusLogger.SetOutput(os.Stdout)
 
-	if cfg.Mode == "Development" {
+	if cfg.Mode == constants.EnvDev {
 		logrusLogger.SetReportCaller(false)
 		logrusLogger.SetFormatter(&logrus.TextFormatter{
 			DisableColors: false,

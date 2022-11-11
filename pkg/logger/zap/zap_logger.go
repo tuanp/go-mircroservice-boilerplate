@@ -1,13 +1,14 @@
 package zap
 
 import (
-	"github.com/tuanp/go-gin-boilerplate/config"
+	"os"
+	"time"
+
+	"github.com/tuanp/go-gin-boilerplate/pkg/config"
 	"github.com/tuanp/go-gin-boilerplate/pkg/constants"
 	"github.com/tuanp/go-gin-boilerplate/pkg/logger"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
-	"os"
-	"time"
 )
 
 type zapLogger struct {
@@ -59,7 +60,7 @@ func (l *zapLogger) initLogger(cfg *config.ServerConfig) {
 	var encoderCfg zapcore.EncoderConfig
 	var encoder zapcore.Encoder
 
-	if cfg.Mode == "Prod" {
+	if cfg.Mode == constants.EnvProd {
 		encoderCfg = zap.NewProductionEncoderConfig()
 		encoderCfg.NameKey = "[SERVICE]"
 		encoderCfg.TimeKey = "[TIME]"

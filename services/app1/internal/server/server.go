@@ -2,8 +2,9 @@ package server
 
 import (
 	"context"
-	"github.com/tuanp/go-gin-boilerplate/config"
 	"net/http"
+
+	"github.com/tuanp/go-gin-boilerplate/pkg/config"
 )
 
 type Server struct {

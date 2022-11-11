@@ -2,7 +2,8 @@ package db
 
 import (
 	"github.com/go-redis/redis/v8"
-	"github.com/tuanp/go-gin-boilerplate/config"
+	"github.com/tuanp/go-gin-boilerplate/pkg/config"
+
 	"log"
 	"time"
 )

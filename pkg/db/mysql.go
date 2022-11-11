@@ -1,10 +1,11 @@
 package db
 
 import (
-	"github.com/tuanp/go-gin-boilerplate/pkg/logger"
 	"time"
 
-	"github.com/tuanp/go-gin-boilerplate/config"
+	"github.com/tuanp/go-gin-boilerplate/pkg/config"
+	"github.com/tuanp/go-gin-boilerplate/pkg/logger"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )

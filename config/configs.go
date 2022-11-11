@@ -66,10 +66,12 @@ type (
 	}
 
 	RedisConfig struct {
-		Addr     string `mapstructure:"addr"`
-		Password string `mapstructure:"password"`
-		DB       int    `mapstructure:"db"`
-		PoolSize int    `mapstructure:"poolSize"`
+		Addr         string `mapstructure:"addr"`
+		Password     string `mapstructure:"password"`
+		DB           int    `mapstructure:"db"`
+		PoolSize     int    `mapstructure:"poolSize"`
+		MinIdleConns int    `mapstructure:"minIdleConns"`
+		PoolTimeout  int    `mapstructure:"poolTimeout"`
 	}
 
 	LoggerConfig struct {

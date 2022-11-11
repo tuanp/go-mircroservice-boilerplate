@@ -2,14 +2,14 @@ package v1
 
 import (
 	"github.com/labstack/echo/v4"
-	"github.com/tuanp/go-gin-boilerplate/services/app1/internal/services"
+	"github.com/tuanp/go-gin-boilerplate/services/app1/internal/service"
 )
 
 type Handler struct {
-	services *services.Services
+	services *service.Services
 }
 
-func NewHandler(services *services.Services) *Handler {
+func NewHandler(services *service.Services) *Handler {
 	return &Handler{
 		services: services,
 	}

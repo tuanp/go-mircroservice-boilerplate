@@ -1,20 +1,23 @@
-package handlers
+package handler
 
 import (
 	"github.com/labstack/echo/v4"
 	"github.com/tuanp/go-gin-boilerplate/config"
-	v1 "github.com/tuanp/go-gin-boilerplate/services/app1/internal/handlers/v1"
-	"github.com/tuanp/go-gin-boilerplate/services/app1/internal/services"
+	"github.com/tuanp/go-gin-boilerplate/pkg/logger"
+	v1 "github.com/tuanp/go-gin-boilerplate/services/app1/internal/handler/v1"
+	"github.com/tuanp/go-gin-boilerplate/services/app1/internal/service"
 	"net/http"
 )
 
 type Handler struct {
-	services *services.Services
+	services *service.Services
+	logger   logger.Logger
 }
 
-func NewHandler(services *services.Services) *Handler {
+func NewHandler(services *service.Services, logger logger.Logger) *Handler {
 	return &Handler{
 		services: services,
+		logger:   logger,
 	}
 }
 
